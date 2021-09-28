@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div>
+  <h1>Last releases</h1>
+  <div>
+    <div class="release" *ngFor="let item of releases">
+      <pre>{{item |json}}</pre>
+    </div>
+  </div>
+</div>
