@@ -1,0 +1,25 @@
+<nav class="nav">
+  <spotify-icon [fillColor]="logoColor"
+                [customWidth]=160
+                (mouseenter)="logoColor='#1ed760'"
+                (mouseleave)="logoColor='#fff'"
+                routerLink="/home">
+  </spotify-icon>
+
+  <div class="links__container">
+    <button type="button" 
+            class="toggle"
+            #toggle>
+      <hamburguer-icon  [fillColor]="toggleColor"
+                        (mouseenter)="toggleColor='#1ed760'"
+                        (mouseleave)="toggleColor='#fff'"
+                        (click)="toggleAside()">
+      </hamburguer-icon>
+    </button>
+    <ul class="links animated" #menu>
+      <li class="link"
+          routerLink="/home"
+          routerLinkActive="activeLink">Home</li>
+    </ul>
+  </div>
+</nav>

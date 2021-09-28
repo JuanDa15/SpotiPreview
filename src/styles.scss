@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'spotify-circular';
+  src: url('/assets/fonts/CircularSpUIv3T-Book.woff2')format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'spotify-circular';
+  src: url('/assets/fonts/CircularSpUIv3T-Bold.woff2')format('woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'spotify-circular';
+  src: url('/assets/fonts/CircularSpUIv3T-Black.woff2')format('woff2');
+  font-weight: 900;
+}
+
+
+$black: #000;
+$almost_black: #191414;
+$white: #fff;
+$dark_green: #1bd954;
+$light_green: #1ed760;
+
+h1{
+  margin: 0;
+}
+
+html{
+  box-sizing: border-box;
+}
+
+*, *::after, *::before{
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  font-family: 'spotify-circular', Helvetica, Arial, sans-serif;
+  background-color: $almost_black;
+  color: #fff;
+}
+
+
+.container{
+  max-width: 1450px;
+  margin: 0 auto;
+}

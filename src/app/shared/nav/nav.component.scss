@@ -1,0 +1,127 @@
+@import '/src/styles.scss';
+
+.nav{
+  background-color: $black;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 70px;
+  justify-content: space-between;
+  justify-items: center;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  position: relative;
+  z-index: 1000;
+
+  spotify-icon{
+    cursor: pointer;
+  }
+}
+
+.links{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.link{
+  padding: .6rem 1.2rem;
+  font-size: 1.3rem;
+  color: #fff;
+  transition: color .3s ease;
+  cursor: pointer;
+
+  &:hover{
+    color: $light_green;
+  }
+}
+
+
+.links_container{
+}
+
+.toggle{
+  background-color: #000 !important;
+  border: none;
+  display: none;
+  height: 100%;
+  padding: auto 0;
+}
+
+hamburguer-icon{
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .toggle{
+    display: block;
+  }
+
+  .links_container{
+    position: relative;
+  }
+
+  .links{
+    background-color: $black;
+    width: 0px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-flow: column nowrap;
+    align-content: flex-start;
+    justify-content: flex-end;
+    min-height: calc(100vh - 70px);
+    transition: width .3s ease;
+
+    .link{
+      display: none;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+  }
+}
+
+.activeLink{
+  color: $light_green;
+}
+
+.active{
+  width: 400px;
+
+  .link{
+    display: block;
+    font-size: 2rem;
+    pointer-events: all;
+    animation: fadeIn .5s ease 1;
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
