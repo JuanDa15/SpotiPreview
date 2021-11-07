@@ -1,0 +1,109 @@
+@import 'src/styles.scss';
+
+.search__container{
+  padding: 1rem;
+}
+
+
+.answer__container{
+  display: flex;
+  flex-flow: row wrap !important;
+  gap: 0.5rem;
+}
+
+.answer{
+  border-radius: .5rem;
+  filter: drop-shadow(0 0 1px rgb(200, 200, 200));
+  flex: 1 1 23%;
+  max-height: 500px;
+  min-width: 278px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+
+  img{
+    width: 100%;
+    height: 100%;
+    filter: blur(2px) brightness(.5);
+    transition: filter .3s ease-in;
+
+
+    &:hover{
+      filter: blur(0);
+    }
+  }
+
+  &:hover img{
+    filter: blur(0);
+  }
+  &:hover .window{
+    bottom: 0;
+  }
+}
+
+.window{
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  bottom: -100%;
+  transition: all .5s ease;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: $black;
+
+  label,p{
+    margin: 0;
+    padding: 0;
+  }
+
+  label{
+    font-weight: 800;
+    font-size: .9rem;
+    color: rgb(198, 19, 204);
+  }
+
+  p{
+    font-size: .9rem;
+    margin-bottom: .5rem;
+
+    span{
+      color: $dark_green;
+      text-transform: capitalize;
+      font-weight: 700;
+      margin-right: .5rem;
+    }
+  }
+
+  button{
+    border: none;
+    background-color: inherit;
+    color: $dark_green;
+    font-size: 2rem;
+    transition: all .3s ease-in;
+
+    &:hover{
+      transform: scale(1.3);
+    }
+  }
+}
+
+.artist__info{
+  flex: 1 1 80%;
+}
+
+.release__date{
+  text-align: right;
+  font-size: .8rem !important;
+
+  span{
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-widht: 1180px) {
+  .lastReleases__container{
+    flex-wrap: wrap;
+  }
+
+
+}

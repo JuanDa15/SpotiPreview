@@ -1,3 +1,17 @@
-.release{
-  margin-bottom: 1rem;
+@import 'src/styles.scss';
+
+.home{
+  padding: 0rem 1rem; 
+
+  h2{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+song-component{
+  flex: 1 1 23%;
+  max-height: 500px;
+  min-width: 278px;
 }

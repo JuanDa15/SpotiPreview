@@ -1,12 +1,5 @@
 @import '/src/styles.scss';
 
-h2{
-  margin: 0;
-  font-size: 2.5rem;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .artist__header{
   display: flex;
   flex-flow: row nowrap;
@@ -54,8 +47,8 @@ h2{
   }
 
   h1{
-    margin: 0;
-    font-size: 3.4rem;
+    margin: .5rem 0 0;
+    font-size: 2.8rem;
   }
 
   small{
@@ -95,19 +88,8 @@ h2{
   }
 }
 
-// --------------------------------------------------
-.topTracks{
-  background-color: #141010;
-  padding: 0rem 1rem; 
-}
-
-.albums{
-  background-color: #141010;
-  padding: 0rem 1rem; 
-}
-
-song-component{
-  flex: 1 1 23%;
-  max-height: 500px;
-  min-width: 278px;
+.widgetContainer{
+  margin-top: 2rem;
+  width: 80%;
+  margin: 2rem auto 0;
 }

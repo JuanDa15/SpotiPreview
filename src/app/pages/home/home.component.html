@@ -1,8 +1,13 @@
-<div>
-  <h1>Last releases</h1>
-  <div>
-    <div class="release" *ngFor="let item of releases">
-      <pre>{{item |json}}</pre>
-    </div>
+<div  class="home"
+      *ngIf="!error">
+  <h2>Last releases</h2>
+  <div class="information__container">
+    <song-component *ngFor="let release of releases"
+                    [track]="release">
+    </song-component>
   </div>
 </div>
+
+<error-component  *ngIf="error"
+                  [errorMessage]="errorMessage">
+</error-component>

@@ -1,0 +1,25 @@
+<div class="search__container">
+  
+  <seachbar label="Buscar Artista:"
+            (OnDebounce)="search( $event )" 
+            (OnEnter)="search( $event )">
+  </seachbar>
+
+  <div  class="information__container">
+
+    <div  class="answer" 
+          *ngFor="let artist of Artists | order">
+      <img [src]="(artist.images[0]?.url || '') | imgURL" [alt]="artist.name" [width]="artist.images[0]?.width || 640" [height]="artist.images[0]?.height || 640">
+      <div class="window">
+        <div class="artist__info">
+          <p>{{artist.name}}</p>
+          <p> <span>followers:</span> {{artist.followers.total |number}} <i class="fas fa-users"></i></p>
+        </div>
+
+        <button (click)="goToArtist( artist.id )">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

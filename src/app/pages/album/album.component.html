@@ -1,0 +1,15 @@
+<div class="artist__header">  
+  <img  [src]="albumInfo.url" alt="{{albumInfo.name}}">
+  <div class="artist__info">
+    <small>{{albumInfo.type}}:</small>
+    <h1>{{albumInfo.name}}</h1>
+    <p>{{albumInfo.popularity | number}} <i class="fas fa-chart-line"></i></p>
+    <a  href="{{albumInfo?.external_url}}"
+        target="_BLANK">Ver album en spotify</a>
+  </div>
+  <button routerLink="/home">Regresar</button>
+</div>
+<div class="widgetContainer">
+  <song-widget  [uri]="albumInfo.uri"
+                height="500"></song-widget>
+</div>

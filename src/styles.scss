@@ -45,6 +45,18 @@ body{
 
 
 .container{
-  max-width: 1450px;
+  max-width: 1500px;
   margin: 0 auto;
+}
+
+.information__container{
+  display: flex;
+  flex-flow: row wrap !important;
+  gap: 0.5rem;
+}
+
+@media screen and (max-widht: 1180px) {
+  .information__container{
+    flex-wrap: wrap;
+  }
 }

@@ -1,5 +1,14 @@
 @import '/src/styles.scss';
 
+html{
+  box-sizing: border-box;
+}
+
+*,*::before,*::after{
+  box-sizing: inherit;
+}
+
+
 .nav{
   background-color: $black;
   display: flex;
@@ -7,8 +16,10 @@
   height: 70px;
   justify-content: space-between;
   justify-items: center;
-  padding-left: .5rem;
-  padding-right: .5rem;
+  align-items: center;
+  max-width: 100vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   z-index: 1000;
 
@@ -39,7 +50,9 @@
 }
 
 
-.links_container{
+.links{
+  display: flex;
+  flex-flow: row-reverse nowrap;
 }
 
 .toggle{

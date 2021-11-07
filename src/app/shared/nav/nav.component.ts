@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -6,6 +6,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent{
+
+  
 
   @ViewChild('toggle') toggle!:ElementRef<HTMLElement>;
 

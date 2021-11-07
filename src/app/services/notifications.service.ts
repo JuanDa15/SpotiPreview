@@ -10,8 +10,8 @@ export class NotificationsService {
 
   fastNotification(icon:SweetAlertIcon,position:SweetAlertPosition){
     Swal.fire({
-      icon:'success',
-      position: 'center',
+      icon:icon,
+      position: position,
       showConfirmButton: false,
       timer: 1000,
       background: '#000'
@@ -20,8 +20,8 @@ export class NotificationsService {
 
   fastNotificationText(icon:SweetAlertIcon,position:SweetAlertPosition,text:string){
     Swal.fire({
-      icon:'success',
-      position: 'center',
+      icon:icon,
+      position: position,
       showConfirmButton: false,
       text: text,
       timer: 1000,

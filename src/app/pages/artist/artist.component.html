@@ -1,1 +1,31 @@
-<p>artist works!</p>
+<div class="artist__header">  
+  <img *ngFor="let img of artistInfo?.images | slice:0:1" [src]="img.url" alt="{{artistInfo?.name}}">
+  <div class="artist__info">
+    <small>{{artistInfo?.type}}:</small>
+    <h1>{{artistInfo?.name}}</h1>
+    <p>{{artistInfo?.followers?.total | number}} <i class="fas fa-users"></i></p>
+    <a  href="{{artistInfo?.external_urls?.spotify}}"
+        target="_BLANK">Ver perfil en spotify</a>
+  </div>
+  <button routerLink="/home">Regresar</button>
+</div>
+
+<div class="genres__container">
+  <p *ngFor="let genre of artistInfo?.genres">
+    {{genre}}
+  </p>
+</div>
+
+<div class="topTracks">
+  <h2>Top Tracks</h2>
+  <div class="information__container">
+    <song-component *ngFor="let track of tracks |slice:0:8" [track]="track"></song-component>
+  </div>
+</div>
+
+<div class="albums">
+  <h2>Albums</h2>
+  <div class="information__container">
+    <song-component *ngFor="let track of albums |slice:0:4" [track]="track" (click)="goToAlbum( track.id || '' )"></song-component>
+  </div>
+</div>

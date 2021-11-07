@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators'
+import { map, tap } from 'rxjs/operators'
 import { answerToken } from '../interfaces/requestToken.interface';
 
 @Injectable({
@@ -15,7 +14,7 @@ export class GetTokenService {
 
   getToken(){ 
     const headers = new HttpHeaders()
-          .set('Content-Type','application/x-www-form-urlencoded')
+          .set('Content-Type','application/x-www-form-urlencoded');
 
     const body = new URLSearchParams();
     
@@ -30,6 +29,9 @@ export class GetTokenService {
                   if(access_token){
                     localStorage.setItem('token',access_token);
                   }
+                }),
+                map( value => {
+                  (value)? true : false 
                 })
               );    
   }
